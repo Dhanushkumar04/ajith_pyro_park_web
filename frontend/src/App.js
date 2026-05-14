@@ -64,7 +64,7 @@ const Navbar = ({ cartCount, onCategorySelect, categories, onCartClick, disabled
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-4">
           <div className={`flex items-center ${disabledClasses}`}>
-            <h1 className="text-3xl font-bold text-gradient">Ajith Pyro Parks</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gradient">Ajith Pyro Parks</h1>
           </div>
           <button onClick={handleCartClick} className={`relative bg-gradient-to-r from-pink-600 to-red-500 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:scale-105 transition-transform btn-shine ${disabledClasses}`}>
             <i className="fa fa-shopping-cart mr-2"></i> Cart ({cartCount})
@@ -127,9 +127,9 @@ const ProductCard = ({ product, onProductClick, onAddToCart }) => {
         )}
       </div>
       <div className="p-5">
-        <h3 className="text-xl font-bold text-white mb-1 truncate">{product.name}</h3>
-        {product.nameTamil && <p className="text-gray-400 text-sm font-medium mb-1">{product.nameTamil}</p>}
-        <p className="text-pink-400 text-sm mb-3">{product.category || product.category_name}</p>
+        <h3 className="text-lg sm:text-xl font-bold text-white mb-1 truncate">{product.name}</h3>
+        {product.nameTamil && <p className="text-gray-400 text-xs sm:text-sm font-medium mb-1">{product.nameTamil}</p>}
+        <p className="text-pink-400 text-xs sm:text-sm mb-3">{product.category || product.category_name}</p>
         <div className="flex items-baseline justify-start space-x-2 mb-4">
           {product.discounted_price ? (
             <>
@@ -688,7 +688,9 @@ function App() {
           width: 100%; padding: 0.75rem; border-radius: 0.5rem; background: #1f2937; border: 1px solid #374151; color: white;
         }
         .custom-input:focus { border-color: #ec4899; outline: none; }
-        .social-icons-container { position: fixed; right: 25px; bottom: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+        .social-icons-container { 
+          position: fixed; right: 25px; bottom: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; 
+        }
         .social-icon {
           display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%;
           color: white; font-size: 30px; transition: all 0.4s; box-shadow: 0 6px 15px rgba(0,0,0,0.4);
@@ -696,6 +698,13 @@ function App() {
         .social-icon.whatsapp { background: #25D366; }
         .social-icon.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-icon:hover { transform: scale(1.15) translateY(-5px); box-shadow: 0 10px 25px currentColor; }
+        
+        @media (max-width: 768px) {
+          .social-icons-container { right: 15px; bottom: 15px; gap: 10px; }
+          .social-icon { width: 48px; height: 48px; font-size: 24px; }
+          .text-glow { font-size: 2.5rem !important; line-height: 1.2; }
+          .glass-card { padding: 1rem !important; }
+        }
         .no-scrollbar::-webkit-scrollbar { display: none; }
       `}</style>
 
@@ -716,10 +725,10 @@ function App() {
         ) : showCart ? (
           <CartPage cart={cart} onUpdateQuantity={handleUpdateQuantity} onRemoveFromCart={handleRemoveFromCart} onBack={() => setShowCart(false)} onCheckout={handleCheckout} />
         ) : (
-          <main className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-glow">Celebrate with Ajith Pyro Parks</h1>
-              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Discover our exclusive 2026 collection of premium crackers, sparkling fountains, and luxury gift boxes.</p>
+          <main className="max-w-7xl mx-auto px-4 py-8 sm:py-12 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-4 text-glow px-2">Celebrate with Ajith Pyro Parks</h1>
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">Discover our exclusive 2026 collection of premium crackers, sparkling fountains, and luxury gift boxes.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {filteredProducts.map((product) => (
