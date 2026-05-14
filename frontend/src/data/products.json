@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Small Sparklers",
+    "price": 50,
+    "categoryId": 1,
+    "description": "Pack of 10 sparklers for kids and family fun.",
+    "image": "/images/sparklers.jpg",
+    "video": "/videos/sparklers.mp4"
+  },
+  {
+    "id": 2,
+    "name": "Big Sparklers",
+    "price": 100,
+    "categoryId": 1,
+    "description": "Extra-long sparklers for longer shine.",
+    "image": "/images/big-sparklers.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Flower Pot – Small",
+    "price": 120,
+    "categoryId": 2,
+    "description": "Bright sparkling flower pot (small size).",
+    "image": "/images/flowerpot-small.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Flower Pot – Deluxe",
+    "price": 200,
+    "categoryId": 2,
+    "description": "Deluxe flower pot with vibrant effects.",
+    "image": "/images/flowerpot-deluxe.jpg",
+    "video": "/videos/flowerpot.mp4"
+  },
+  {
+    "id": 5,
+    "name": "Rocket – Single Shot",
+    "price": 150,
+    "categoryId": 3,
+    "description": "One-shot rocket with colorful burst.",
+    "image": "/images/rocket-single.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Rocket Pack (5 pcs)",
+    "price": 600,
+    "categoryId": 3,
+    "description": "Pack of 5 rockets with different colors.",
+    "image": "/images/rocket-pack.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Ground Chakkar – Standard",
+    "price": 80,
+    "categoryId": 4,
+    "description": "Classic spinning chakkars.",
+    "image": "/images/chakkar.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Hydrogen Bomb",
+    "price": 250,
+    "categoryId": 5,
+    "description": "Loud bomb with huge sound blast.",
+    "image": "/images/bomb.jpg"
+  }
+]
