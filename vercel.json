@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    {
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/create-order",
+      "dest": "backend/index.js"
+    },
+    {
+      "src": "/verify-payment",
+      "dest": "backend/index.js"
+    },
+    {
+      "src": "/send-order-email",
+      "dest": "backend/index.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "frontend/static/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "frontend/images/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "frontend/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "frontend/manifest.json"
+    },
+    {
+      "src": "/fireworks.png",
+      "dest": "frontend/fireworks.png"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1",
+      "check": true
+    }
+  ]
+}
